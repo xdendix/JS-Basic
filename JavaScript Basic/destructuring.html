@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      // mengambil data di array
+      {
+        const names = ["Dendi", "Prayogo", "Hidayat", "Rizki", "Ridwan"];
+
+        const [firstName, middleName, lastName, ...others] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+        console.info(others);
+      }
+
+      // mengambil data di object
+      {
+        const person = {
+          firstName: "Dendi",
+          lastName: "Hidayat",
+          address: {
+            street: "Jl. Raya",
+            city: "Jakarta",
+            country: "Indonesia",
+          },
+          hobbies: ["Coding", "Gaming"],
+          channel: "Github",
+        };
+        // destructuring nested object (address{city, street, country})
+        const {
+          firstName,
+          lastName,
+          address: { street, city, country },
+          ...others
+        } = person;
+
+        console.info(firstName);
+        console.info(lastName);
+        console.info(street);
+        console.info(city);
+        console.info(country);
+        console.info(others);
+      }
+
+      // destructuring di function parameter (1)
+      {
+        function displayPerson({ firstName, middleName, lastName }) {
+          console.info(firstName);
+          console.info(middleName);
+          console.info(lastName);
+        }
+
+        const person = {
+          firstName: "Dendi",
+          middleName: "Prayogo",
+          lastName: "Hidayat",
+        };
+
+        displayPerson(person);
+      }
+
+      // destructuring di function parameter (2)
+      {
+        function sum([first, second]) {
+          return first + second;
+        }
+
+        console.info(sum([1, 1]));
+        console.info(sum([10, 10]));
+      }
+
+      // default value destructuring array
+      {
+        const names = ["Dendi", "Prayogo", "Hidayat"];
+        const [firstName, middleName = "Andi", lastName = "Doe"] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      // default value destructuring object
+      {
+        const person = {
+          firstName: "Dendi",
+          middleName: "Andi",
+          lastName: "Hidayat",
+        };
+
+        let { firstName, middleName = "Andi", lastName } = person;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      // menggunakan nama variabel yang berbeda
+      {
+        const person = {
+          firstName: "Dendi",
+          middleName: "Prayogo",
+          lastName: "Hidayat",
+        };
+
+        let {
+          firstName: namaDepan,
+          middleName: namTengah,
+          lastName: namaBelakang,
+        } = person;
+
+        console.info(namaDepan);
+        console.info(namTengah);
+        console.info(namaBelakang);
+      }
+    </script>
+  </body>
+</html>

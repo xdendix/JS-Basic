@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Of</title>
+  </head>
+  <body>
+    <script>
+      /*
+    Penggunaan For Of hanya untuk Iterable
+    tidak bisa digunakan di tipe data Object
+    */
+
+      // contoh for of di array
+      const names = ["Dendi", "Prayogo", "Hidayat"];
+      for (const name of names) {
+        console.info(`${name}`);
+      }
+
+      // contoh for of di string
+      const fullName = "Dendi Prayogo Hidayat";
+      for (const character of fullName) {
+        console.info(`${character}`);
+      }
+    </script>
+  </body>
+</html>

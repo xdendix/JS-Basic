@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kata Kunci This</title>
+  </head>
+  <body>
+    <script>
+      // this di global scope
+      console.info(this);
+
+      // this di function scope
+      function sample() {
+        console.info(this);
+
+        // this di nested function scope
+        function nested() {
+          console.info(this);
+        }
+
+        nested();
+      }
+
+      sample();
+
+      // this di object method
+      const person = {
+        name: "Dendi",
+        sayHello: function (value) {
+          console.info(`Hello ${value} My name is ${this.name}`);
+        },
+      };
+
+      person.sayHello("Prayogo");
+      person.sayHello("Hidayat");
+    </script>
+  </body>
+</html>

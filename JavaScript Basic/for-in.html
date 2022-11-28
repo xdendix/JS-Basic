@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For In</title>
+  </head>
+  <body>
+    <script>
+      // contoh For In di Object
+      const person = {
+        firstName: "Dendi",
+        middleName: "Prayogo",
+        lastName: "Hidayat",
+      };
+
+      for (const property in person) {
+        console.info(`${property} : ${person[property]}`);
+      }
+
+      // contoh For In di Array
+      const names = ["Dendi", "Prayogo", "Hidayat"];
+      for (const index in names) {
+        console.info(`${index} : ${names[index]}`);
+      }
+    </script>
+  </body>
+</html>

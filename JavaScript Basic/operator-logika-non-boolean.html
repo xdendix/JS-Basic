@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator Logika Non Boolean</title>
+  </head>
+  <body>
+    <script>
+      // operator logika or non boolean
+      console.log("Hello" || ""); // Hello
+      console.log("" || []); // []
+      console.log("0" || "NOL"); // 0
+      console.log(0 || "NOL"); // NOL
+      console.log(null || "NULL"); // NULL
+      console.log(undefined || "UNDEFINED"); // UNDEFINED
+      console.log(0 || false); // false
+
+      // contoh penggunaan operator logika or non boolean
+      const person = {
+        firstName: "Dendi",
+        lastName: "Hidayat",
+      };
+
+      const name = person.firstName || person.lastName;
+      console.info(name);
+
+      // operator logika and non boolean
+      console.log("Hello" && ""); // ""
+      console.log("" && []); // ""
+      console.log("0" && "NOL"); // NOL
+      console.log(0 && "NOL"); // 0
+      console.log(null && "NULL"); // null
+      console.log(undefined && "UNDEFINED"); // undefined
+      console.log("undefined" && "null"); // null
+    </script>
+  </body>
+</html>
